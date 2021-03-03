@@ -21,11 +21,23 @@ micronaut {
 }
 
 dependencies {
+	annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+	annotationProcessor 'org.projectlombok:lombok:1.18.16'
+	annotationProcessor "io.micronaut:micronaut-inject-java"
+	annotationProcessor "io.micronaut:micronaut-validation"
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-runtime")
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-http-client")
     runtimeOnly("ch.qos.logback:logback-classic")
+
+	compile 'org.projectlombok:lombok:1.18.16'
+
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
+
+	implementation("io.micronaut.data:micronaut-data-hibernate-jpa:1.1.0")
+	annotationProcessor("io.micronaut.data:micronaut-data-processor:1.1.0")
+
 }
 
 

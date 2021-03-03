@@ -1,3 +1,8 @@
 micronaut:
   application:
     name: smartRetry
+
+
+client:
+  url: ${WEBHOOK_URL:`http://localhost:8085/hook`}
+  attempts: 5
